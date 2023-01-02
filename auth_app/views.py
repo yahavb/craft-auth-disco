@@ -11,9 +11,11 @@ def user_detail(request, uuid):
   return render(request, "user_detail.html", context)
 
 def allusers_detail(request):
+  print('in allusers_detail:request',request)
   user_objs= User.objects.all()
   context = {
       "users": user_objs,
   }
+  print('in allusers_detail:user_objs',user_objs)
   return render(request, "users_detail.html", context)
 
